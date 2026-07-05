@@ -17,9 +17,9 @@ body{
 
     transition:
 
-    background .3s ease,
+    background .55s ease,
 
-    color .3s ease,
+    color .55s ease,
 
     opacity .4s ease,
 
@@ -65,6 +65,91 @@ body.fade-out{
     translateY(15px)
 
     scale(.98);
+
+}
+
+body.language-switching main,
+body.language-switching footer{
+
+    animation:
+
+    languageSwap .38s ease;
+
+}
+
+body.theme-switching::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    z-index:9998;
+
+    pointer-events:none;
+
+    background:
+
+    rgba(255,255,255,.055);
+
+    animation:
+
+    themeWash .5s ease-out forwards;
+
+}
+
+@keyframes themeWash{
+
+    0%{
+
+        opacity:0;
+
+    }
+
+    38%{
+
+        opacity:.36;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+    }
+
+}
+
+@keyframes languageSwap{
+
+    0%{
+
+        opacity:.45;
+
+        transform:
+
+        translateY(8px);
+
+        filter:
+
+        blur(3px);
+
+    }
+
+    100%{
+
+        opacity:1;
+
+        transform:
+
+        translateY(0);
+
+        filter:
+
+        blur(0);
+
+    }
 
 }
 

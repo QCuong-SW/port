@@ -163,7 +163,7 @@ rgba(255,255,255,.1);
 }
 
 
-/* login btn and dark/light mode*/
+/* nav actions */
 .nav-actions{
 
     display:flex;
@@ -171,4 +171,124 @@ rgba(255,255,255,.1);
     align-items:center;
 
     gap:12px;
+}
+
+.lang-btn{
+
+    min-width:68px;
+
+    height:45px;
+
+    padding:0 16px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:8px;
+
+    border-radius:14px;
+
+    color:white;
+
+    font-size:10pt;
+
+    font-weight:700;
+
+    background:
+
+    linear-gradient(
+
+        90deg,
+
+        #05fbea,
+
+        #2196f3
+
+    );
+
+    box-shadow:
+
+    0 8px 20px
+
+    rgba(33,150,243,.18);
+
+    transition:
+
+    transform .3s ease,
+
+    opacity .3s ease;
+
+}
+
+.lang-btn:hover{
+
+    transform:
+
+    translateY(-3px);
+
+    opacity:.9;
+
+}
+
+.lang-btn.switching i{
+
+    animation:
+
+    langIconSpin .42s ease;
+
+}
+
+.lang-btn.switching span{
+
+    animation:
+
+    langTextPop .42s ease;
+
+}
+
+@keyframes langIconSpin{
+
+    from{
+
+        transform:
+
+        rotate(0deg);
+
+    }
+
+    to{
+
+        transform:
+
+        rotate(360deg);
+
+    }
+
+}
+
+@keyframes langTextPop{
+
+    0%{
+
+        transform:
+
+        scale(.78);
+
+        opacity:.4;
+
+    }
+
+    100%{
+
+        transform:
+
+        scale(1);
+
+        opacity:1;
+
+    }
+
 }

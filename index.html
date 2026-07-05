@@ -43,8 +43,6 @@
 
     <link rel="stylesheet" href="css/footer.css">
 
-    <link rel="stylesheet" href="css/login.css">
-
     <!-- icon -->
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
@@ -84,13 +82,15 @@
 
     <ul class="nav-links">
 
-        <li><a href="#home">Home</a></li>
+        <li><a href="#home" data-i18n="nav.home">Home</a></li>
 
-        <li><a href="#about">About</a></li>
+        <li><a href="#about" data-i18n="nav.about">About</a></li>
 
-        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience" data-i18n="nav.experience">Experience</a></li>
 
-        <li><a href="#projects">Projects&Contact</a></li>
+        <li><a href="#skills" data-i18n="nav.skills">Skills</a></li>
+
+        <li><a href="#projects" data-i18n="nav.projects">Projects&Contact</a></li>
 
     </ul>
 
@@ -100,9 +100,16 @@
         <i class="fa-solid fa-moon"></i>
     </button>
 
-    <a href="login.html" class="login-btn">
-        Login
-    </a>
+    <button
+    class="lang-btn"
+    type="button"
+    aria-label="Switch language">
+
+        <i class="fa-solid fa-language"></i>
+
+        <span>VI</span>
+
+    </button>
 
 </div>
 
@@ -119,13 +126,15 @@
 
         <div class="hero-content">
 
+            <div class="hero-copy">
+
             <h1 class="hero-title">
 
-                Building Modern
+                <span class="hero-name" data-i18n="hero.title">Hi, I'm Cuong Quang</span>
 
-                <span>
+                <span class="hero-accent" data-i18n="hero.subtitle">
 
-                    Web Experiences
+                    Software Engineering
 
                 </span>
 
@@ -134,11 +143,21 @@
 
             <p class="hero-description">
 
-                Passionate about building scalable systems
-
-                and creating modern web applications.
+                <span data-i18n="hero.description">I enjoy building scalable systems, clean APIs, and modern web applications with a calm, reliable user experience.</span>
 
             </p>
+
+            <div class="hero-intro">
+
+                <span>
+                    <span data-i18n="hero.badgeStudent">Information Technology Student</span>
+                </span>
+
+                <span>
+                    <span data-i18n="hero.badgeStack">Spring Boot / PostgreSQL / Java</span>
+                </span>
+
+            </div>
 
 
             <div class="hero-buttons">
@@ -146,17 +165,47 @@
                 <button class="btn-primary"
                 onclick="location.href='#projects'">
 
-                    View Projects 
+                    <span data-i18n="hero.viewProjects">View Projects</span>
 
                 </button>
 
 
-                <button class="btn-secondary"
-                onclick="location.href='#projects'">
+                <button
+                class="btn-secondary contact-trigger"
+                type="button">
 
-                    Contact Me
+                    <span data-i18n="hero.contactMe">Contact Me</span>
 
                 </button>
+
+                </div>
+
+                </div>
+
+                <div class="hero-profile">
+
+                    <div class="profile-frame">
+
+                        <img
+                        src="img/profile.jpg"
+                        alt="Cuong Quang portrait"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                        <div class="profile-fallback">
+                            CQ
+                        </div>
+
+                    </div>
+
+                    <div class="profile-note">
+
+                        <i class="fa-solid fa-code"></i>
+
+                        <span>
+                            <span data-i18n="hero.note">Turning ideas into useful products.</span>
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -172,9 +221,41 @@
 
             <h2 class="section-title">
 
-                About Me
+                <span data-i18n="about.title">About Me</span>
 
             </h2>
+
+            <div class="about-summary">
+
+                <div class="about-intro">
+
+                    <span class="about-label">
+
+                        <span data-i18n="about.label">Software Engineering Student</span>
+
+                    </span>
+
+                    <p>
+
+                        <span data-i18n="about.description">I'm an Information Technology student passionate about software engineering and backend development. I enjoy designing clean APIs, working with databases, and turning ideas into practical applications.</span>
+
+                    </p>
+
+                </div>
+
+                <div class="about-focus">
+
+                    <div>
+
+                        <span data-i18n="about.careerLabel">Career Direction</span>
+
+                        <strong data-i18n="about.careerValue">Software Engineer</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
 
             <div class="about-content">
 
@@ -184,11 +265,11 @@
 
                     <div>
 
-                        <h3>University</h3>
+                        <h3 data-i18n="about.universityTitle">University</h3>
 
                         <p>
 
-                            University of Transport Ho Chi Minh City
+                            <span data-i18n="about.universityValue">University of Transport Ho Chi Minh City</span>
 
                         </p>
 
@@ -203,11 +284,11 @@
 
                     <div>
 
-                        <h3>Major</h3>
+                        <h3 data-i18n="about.majorTitle">Major</h3>
 
                         <p>
 
-                            Information Technology
+                            <span data-i18n="about.majorValue">Information Technology</span>
 
                         </p>
 
@@ -222,11 +303,11 @@
 
                     <div>
 
-                        <h3>Focus</h3>
+                        <h3 data-i18n="about.focusTitle">Focus</h3>
 
                         <p>
 
-                            Backend Development 
+                            <span data-i18n="about.focusValue">Backend Development</span>
 
                         </p>
 
@@ -240,6 +321,308 @@
 
             </section>
 
+        <section id="experience">
+
+            <div class="experience-card">
+
+                <h2 class="section-title">
+
+                    <span data-i18n="experience.title">Hackathon Experience</span>
+
+                </h2>
+
+                <div class="experience-content">
+
+                    <div class="certificate-panel">
+
+                        <button
+                        class="certificate-frame"
+                        type="button"
+                        aria-label="Open hackathon certificate">
+
+                            <img
+                            src="img/certificate.jpg"
+                            alt="Hackathon certificate"
+                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="certificate-fallback">
+
+                                <i class="fa-solid fa-award"></i>
+
+                                <span>
+                                    <span data-i18n="experience.certificate">Certificate</span>
+                                </span>
+
+                            </div>
+
+                        </button>
+
+                    </div>
+
+                    <div class="experience-info">
+
+                        <h3 class="competition-title">
+
+                            <span data-i18n="experience.eventName">Grab The Future Hackathon</span>
+
+                        </h3>
+
+                        <p>
+
+                            <span data-i18n="experience.description">Collaborated with teammates to design and build a practical software solution under limited time.</span>
+
+                        </p>
+
+                        <div class="experience-details">
+
+                            <div class="experience-detail">
+
+                                <i class="fa-solid fa-trophy"></i>
+
+                                <div>
+
+                                    <span data-i18n="experience.eventLabel">Event</span>
+
+                                    <strong data-i18n="experience.eventValue">Hackathon</strong>
+
+                                </div>
+
+                            </div>
+
+                            <div class="experience-detail">
+
+                                <i class="fa-solid fa-calendar-days"></i>
+
+                                <div>
+
+                                    <span data-i18n="experience.timeLabel">Time</span>
+
+                                    <strong>06/2026</strong>
+
+                                </div>
+
+                            </div>
+
+                            <div class="experience-detail">
+
+                                <i class="fa-solid fa-location-dot"></i>
+
+                                <div>
+
+                                    <span data-i18n="experience.locationLabel">Location</span>
+
+                                    <strong data-i18n="experience.locationValue">Ho Chi Minh City</strong>
+
+                                </div>
+
+                            </div>
+
+                            <div class="experience-detail">
+
+                                <i class="fa-solid fa-people-group"></i>
+
+                                <div>
+
+                                    <span data-i18n="experience.teamLabel">Team</span>
+
+                                    <strong>OllWinners</strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section id="team">
+
+            <div class="team-card">
+
+                <h2 class="section-title">
+
+                    <span data-i18n="team.title">My Team</span>
+
+                </h2>
+
+                <div class="team-showcase">
+
+                    <div class="team-meta">
+
+                        <span>
+                            <span data-i18n="team.nameLabel">Team Name</span>
+                        </span>
+
+                        <strong>
+                            OllWinners
+                        </strong>
+
+                        <p>
+                            <span data-i18n="team.nameDescription">A 5-member team working together through 34 continuous hours.</span>
+                        </p>
+
+                    </div>
+
+                    <button
+                    class="team-photo-frame"
+                    type="button"
+                    aria-label="Open team photo">
+
+                        <img
+                        src="img/team.jpg"
+                        alt="OllWinners team photo"
+                        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                        <div class="team-photo-fallback">
+
+                            <i class="fa-solid fa-people-group"></i>
+
+                            <span>
+                                <span data-i18n="team.photoFallback">Team Photo</span>
+                            </span>
+
+                        </div>
+
+                    </button>
+
+                    <div class="team-meta">
+
+                        <span>
+                            <span data-i18n="team.projectLabel">Team Project</span>
+                        </span>
+
+                        <strong>
+                            GreenMiles
+                        </strong>
+
+                        <p>
+                            <span data-i18n="team.projectDescription">An application that tracks and reduces carbon emissions while supporting environmental safety.</span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <div
+        class="image-modal certificate-modal"
+        aria-hidden="true">
+
+            <button
+            class="image-modal-close certificate-modal-close"
+            type="button"
+            aria-label="Close certificate">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="image-modal-content certificate-modal-content">
+
+                <img
+                src="img/certificate.jpg"
+                alt="Hackathon certificate full view">
+
+            </div>
+
+        </div>
+
+        <div
+        class="image-modal team-modal"
+        aria-hidden="true">
+
+            <button
+            class="image-modal-close"
+            type="button"
+            aria-label="Close team photo">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="image-modal-content team-modal-content">
+
+                <img
+                src="img/team.jpg"
+                alt="OllWinners team photo full view">
+
+            </div>
+
+        </div>
+
+        <div
+        class="image-modal contact-modal"
+        aria-hidden="true">
+
+            <button
+            class="image-modal-close"
+            type="button"
+            aria-label="Close contact widget">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="image-modal-content contact-modal-content">
+
+                <span class="contact-modal-label" data-i18n="contact.label">
+                    Contact
+                </span>
+
+                <h3 data-i18n="contact.title">
+                    Let's Connect
+                </h3>
+
+                <div class="contact-methods">
+
+                    <a
+                    class="contact-method"
+                    href="mailto:cuongquang2006@gmail.com">
+
+                        <i class="fa-solid fa-envelope"></i>
+
+                        <div>
+
+                            <span data-i18n="contact.gmailLabel">Gmail</span>
+
+                            <strong>cuongquang2006@gmail.com</strong>
+
+                        </div>
+
+                    </a>
+
+                    <a
+                    class="contact-method"
+                    href="https://www.facebook.com/cuongquang.2006"
+                    target="_blank">
+
+                        <i class="fa-brands fa-facebook"></i>
+
+                        <div>
+
+                            <span data-i18n="contact.facebookLabel">Facebook</span>
+
+                            <strong>facebook.com/cuongquang.2006</strong>
+
+                        </div>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
 
         <section id="skills">
 
@@ -247,7 +630,7 @@
 
         <h2 class="section-title">
 
-            Skills
+            <span data-i18n="skills.title">Skills</span>
 
         </h2>
 
@@ -260,7 +643,7 @@
 
                     <i class="fa-brands fa-html5"></i>
 
-                    <span>HTML</span>
+                    <span data-i18n="skills.html">HTML</span>
 
                 </div>
 
@@ -268,7 +651,7 @@
 
                     <i class="fa-brands fa-css3-alt"></i>
 
-                    <span>CSS</span>
+                    <span data-i18n="skills.css">CSS</span>
 
                 </div>
 
@@ -276,7 +659,7 @@
 
                     <i class="fa-brands fa-js"></i>
 
-                    <span>JavaScript</span>
+                    <span data-i18n="skills.javascript">JavaScript</span>
 
                 </div>
 
@@ -284,7 +667,7 @@
 
                     <i class="fa-brands fa-java"></i>
 
-                    <span>Java</span>
+                    <span data-i18n="skills.java">Java</span>
 
                 </div>
 
@@ -292,7 +675,7 @@
 
                     <i class="fa-solid fa-code"></i>
 
-                    <span>C++</span>
+                    <span data-i18n="skills.cpp">C++</span>
 
                 </div>
 
@@ -300,7 +683,7 @@
 
                     <i class="fa-brands fa-python"></i>
 
-                    <span>Python</span>
+                    <span data-i18n="skills.python">Python</span>
 
                 </div>
 
@@ -308,7 +691,7 @@
 
                     <i class="fa-solid fa-window-maximize"></i>
 
-                    <span>Qt Framework</span>
+                    <span data-i18n="skills.qt">Qt Framework</span>
 
                 </div>
 
@@ -316,7 +699,7 @@
 
                     <i class="fa-solid fa-leaf"></i>
 
-                    <span>Spring Boot</span>
+                    <span data-i18n="skills.spring">Spring Boot</span>
 
                 </div>
 
@@ -324,7 +707,7 @@
 
                     <i class="fa-brands fa-node-js"></i>
 
-                    <span>Express</span>
+                    <span data-i18n="skills.express">Express</span>
 
                 </div>
 
@@ -332,7 +715,23 @@
 
                     <i class="fa-solid fa-database"></i>
 
-                    <span>PostgreSQL</span>
+                    <span data-i18n="skills.postgresql">PostgreSQL</span>
+
+                </div>
+
+                <div class="skill">
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                    <span data-i18n="skills.postman">Postman</span>
+
+                </div>
+
+                <div class="skill">
+
+                    <i class="fa-brands fa-docker"></i>
+
+                    <span data-i18n="skills.docker">Docker</span>
 
                 </div>
 
@@ -351,7 +750,7 @@
 
                 <h2 class="section-title">
 
-                    Projects & Contact
+                    <span data-i18n="projects.title">Projects & Contact</span>
 
                 </h2>
 
@@ -365,17 +764,13 @@
 
                         <h3>
 
-                            My Projects
+                            <span data-i18n="projects.githubTitle">My Projects</span>
 
                         </h3>
 
                         <p>
 
-                            Explore my repositories
-                            and discover what I've been
-                            building with Java,
-                            Spring Boot, PostgreSQL
-                            and more.
+                            <span data-i18n="projects.githubDescription">Explore my repositories and discover what I've been building with Java, Spring Boot, PostgreSQL and more.</span>
 
                         </p>
 
@@ -385,7 +780,7 @@
                         class="project-btn"
                         >
 
-                            View Github
+                            <span data-i18n="projects.githubButton">View Github</span>
                         </a>
                     </div>
 
@@ -397,15 +792,13 @@
 
                         <h3>
 
-                            Let's Build Together
+                            <span data-i18n="projects.contactTitle">Let's Build Together</span>
 
                         </h3>
 
                         <p>
 
-                            Have an idea?
-
-                            Let's turn it into reality.
+                            <span data-i18n="projects.contactDescription">Have an idea? Let's turn it into reality.</span>
 
                         </p>
 
@@ -415,12 +808,14 @@
                             <input
                             type="text"
                             placeholder="Your Name"
+                            data-i18n-placeholder="projects.namePlaceholder"
                             required>
 
 
                             <input
                             type="email"
                             placeholder="Your Email"
+                            data-i18n-placeholder="projects.emailPlaceholder"
                             required>
 
 
@@ -428,6 +823,7 @@
 
                             rows="5"
                             placeholder="Tell me your idea..."
+                            data-i18n-placeholder="projects.messagePlaceholder"
                             required
 
                             ></textarea>
@@ -436,13 +832,59 @@
                             <button
 
                             type="submit"
-                            class="project-btn">
+                            class="project-btn submit-message-btn">
 
-                                Send Message
+                                <span data-i18n="projects.sendButton">Send Message</span>
 
                             </button>
 
                         </form>
+
+                        <div
+                        class="message-status"
+                        aria-live="polite">
+
+                            <div class="message-loader">
+
+                                <div class="message-loader-icon">
+
+                                    <i class="fa-solid fa-paper-plane"></i>
+
+                                </div>
+
+                                <div class="message-loader-content">
+
+                                    <span data-i18n="projects.loadingTitle">Sending message</span>
+
+                                    <div class="message-progress">
+
+                                        <span></span>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="message-success">
+
+                                <div class="message-success-icon">
+
+                                    <i class="fa-solid fa-check"></i>
+
+                                </div>
+
+                                <div>
+
+                                    <strong data-i18n="projects.successTitle">Message sent</strong>
+
+                                    <p data-i18n="projects.successDescription">Thanks for reaching out. I'll get back to you soon.</p>
+
+                                </div>
+
+                            </div>
+
+                        </div>
 
                     </div>
 
@@ -468,7 +910,7 @@
 
         <p>
 
-            Building scalable systems.
+            <span data-i18n="footer.description">Building scalable systems.</span>
 
         </p>
 

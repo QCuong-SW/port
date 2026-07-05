@@ -19,9 +19,9 @@
 
 .skills-card{
 
-    width:min(1100px,90%);
+    width:min(1120px,92%);
 
-    padding:50px;
+    padding:58px 64px;
 
     border-radius:28px;
 
@@ -103,13 +103,13 @@
 
     flex:1;
 
-    display:flex;
+    display:grid;
 
-    flex-wrap:wrap;
+    grid-template-columns:
 
-    justify-content:center;
+    repeat(4, minmax(150px,1fr));
 
-    gap:30px;
+    gap:28px;
 
 }
 
@@ -118,9 +118,9 @@
 
 .skill{
 
-    width:50px;
+    width:100%;
 
-    height:50px;
+    min-height:132px;
 
     display:flex;
 
@@ -130,7 +130,7 @@
 
     align-items:center;
 
-    gap:8px;
+    gap:14px;
 
     border-radius:20px;
 
@@ -186,7 +186,7 @@
 
 .skill i{
 
-    font-size:1.8rem;
+    font-size:3.1rem;
 
     background:
 
@@ -215,7 +215,7 @@
 
 .skill span{
 
-    font-size:.85rem;
+    font-size:1rem;
 
     font-weight:600;
 
@@ -233,7 +233,17 @@
 
     .skills-card{
 
-        padding:15px;
+        padding:30px 20px;
+
+    }
+
+    .skills-container{
+
+        grid-template-columns:
+
+        repeat(2,minmax(120px,1fr));
+
+        gap:18px;
 
     }
 
@@ -260,16 +270,16 @@
 
     .skill{
 
-        width:85px;
+        width:100%;
 
-        height:85px;
+        min-height:112px;
 
     }
 
 
     .skill i{
 
-        font-size:1.5rem;
+        font-size:2.5rem;
 
     }
 
@@ -282,9 +292,19 @@
 
 }
 
+@media(max-width:420px){
+
+    .skills-container{
+
+        grid-template-columns:1fr;
+
+    }
+
+}
+
 .skill i{
 
-    font-size:1.8rem;
+    font-size:3.1rem;
 
     background:
 
@@ -310,57 +330,27 @@
 
 }
 
-.skill:nth-child(2) i{
+.skill:nth-child(4n+1) i{
 
-    animation-delay:.2s;
-
-}
-
-.skill:nth-child(3) i{
-
-    animation-delay:.4s;
+    animation-delay:0s;
 
 }
 
-.skill:nth-child(4) i{
+.skill:nth-child(4n+2) i{
 
-    animation-delay:.6s;
-
-}
-
-.skill:nth-child(5) i{
-
-    animation-delay:.8s;
+    animation-delay:.18s;
 
 }
 
-.skill:nth-child(6) i{
+.skill:nth-child(4n+3) i{
 
-    animation-delay:1s;
-
-}
-
-.skill:nth-child(7) i{
-
-    animation-delay:1.2s;
+    animation-delay:.36s;
 
 }
 
-.skill:nth-child(8) i{
+.skill:nth-child(4n+4) i{
 
-    animation-delay:1.4s;
-
-}
-
-.skill:nth-child(9) i{
-
-    animation-delay:1.6s;
-
-}
-
-.skill:nth-child(10) i{
-
-    animation-delay:1.8s;
+    animation-delay:.54s;
 
 }
 
