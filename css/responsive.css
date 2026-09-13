@@ -545,7 +545,8 @@ footer {
     }
 
     .hero-title {
-        font-size: clamp(2.2rem, 13vw, 3.2rem);
+        font-size: clamp(1.82rem, 9.4vw, 2.45rem);
+        line-height: 1.12;
     }
 
     .hero-intro {
@@ -627,7 +628,8 @@ footer {
     }
 
     .hero-title {
-        font-size: 2.05rem;
+        font-size: 1.72rem;
+        line-height: 1.14;
     }
 
     .hero-description,
