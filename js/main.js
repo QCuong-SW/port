@@ -112,7 +112,7 @@ const translations = {
         "nav.experience": "Kinh nghiệm",
         "nav.skills": "Kỹ năng",
         "nav.projects": "Dự án & Liên hệ",
-        "hero.title": "Xin chào, mình là Cường Quang",
+        "hero.title": "Xin chào, mình là Quang Cường",
         "hero.subtitle": "Kỹ thuật phần mềm",
         "hero.description": "Mình thích xây dựng hệ thống có khả năng mở rộng, API rõ ràng và ứng dụng web hiện đại với trải nghiệm ổn định.",
         "hero.badgeStudent": "Sinh viên Công nghệ thông tin",
