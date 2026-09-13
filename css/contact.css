@@ -1,0 +1,7 @@
+.contact-modal-content {
+    color: var(--text);
+}
+
+.contact-method {
+    min-width: 0;
+}
