@@ -31,7 +31,7 @@
 
     <link rel="stylesheet" href="css/hero.css">
 
-    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="css/about.css?v=20260918-heartbridge-warm2">
 
     <link rel="stylesheet" href="css/skills.css">
 
@@ -39,7 +39,7 @@
 
     <link rel="stylesheet" href="css/contact.css">
 
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/responsive.css?v=20260918-balance">
 
     <link rel="stylesheet" href="css/footer.css">
 
@@ -333,7 +333,23 @@
 
                 </h2>
 
-                <div class="experience-content">
+                <div class="experience-carousel" aria-label="Hackathon experience gallery">
+
+                    <button
+                    class="experience-arrow experience-arrow-prev"
+                    type="button"
+                    onclick="window.changeExperienceSlide?.(-1)"
+                    aria-label="Previous experience">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="experience-viewport">
+
+                        <div class="experience-track">
+
+                            <article class="experience-slide is-active">
+
+                                <div class="experience-content">
 
                     <div class="certificate-panel">
 
@@ -437,6 +453,137 @@
 
                     </div>
 
+                                </div>
+
+                            </article>
+
+                            <article class="experience-slide heartbridge-slide">
+
+                                <div class="experience-content">
+
+                                    <div class="certificate-panel">
+
+                                        <button
+                                        class="certificate-frame innovation-slide-frame"
+                                        type="button"
+                                        aria-label="Open HeartBridge achievement">
+
+                                            <img
+                                            src="img/heartbridge-innovation.png"
+                                            alt="HeartBridge innovation achievement"
+                                            onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                                            <div class="certificate-fallback">
+
+                                                <i class="fa-solid fa-lightbulb"></i>
+
+                                                <span>
+                                                    <span data-i18n="experience.innovationFallback">Innovation Achievement</span>
+                                                </span>
+
+                                            </div>
+
+                                        </button>
+
+                                    </div>
+
+                                    <div class="experience-info">
+
+                                        <h3 class="competition-title">
+
+                                            <span data-i18n="experience.innovationName">Top 50 Project - HeartBridge</span>
+
+                                        </h3>
+
+                                        <p>
+
+                                            <span data-i18n="experience.innovationDescription">Reached Top 50 Project in an Innovation event with more than 1000 participants, presenting HeartBridge as a practical product idea.</span>
+
+                                        </p>
+
+                                        <div class="experience-details">
+
+                                            <div class="experience-detail">
+
+                                                <i class="fa-solid fa-lightbulb"></i>
+
+                                                <div>
+
+                                                    <span data-i18n="experience.eventLabel">Event</span>
+
+                                                    <strong data-i18n="experience.innovationEventValue">Innovation</strong>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="experience-detail">
+
+                                                <i class="fa-solid fa-clock"></i>
+
+                                                <div>
+
+                                                    <span data-i18n="experience.timeLabel">Time</span>
+
+                                                    <strong>07/2026</strong>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="experience-detail">
+
+                                                <i class="fa-solid fa-users"></i>
+
+                                                <div>
+
+                                                    <span data-i18n="experience.locationLabel">Location</span>
+
+                                                    <strong data-i18n="experience.locationValue">Ho Chi Minh City</strong>
+
+                                                </div>
+
+                                            </div>
+
+                                            <div class="experience-detail">
+
+                                                <i class="fa-solid fa-seedling"></i>
+
+                                                <div>
+
+                                                    <span data-i18n="experience.rankLabel">Achievement</span>
+
+                                                    <strong data-i18n="experience.rankValue">Top 50 Project</strong>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </article>
+
+                        </div>
+
+                    </div>
+
+                    <button
+                    class="experience-arrow experience-arrow-next"
+                    type="button"
+                    onclick="window.changeExperienceSlide?.(1)"
+                    aria-label="Next experience">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+
+                    <div class="experience-dots" aria-label="Experience slide controls">
+                        <button class="experience-dot is-active" type="button" onclick="window.showExperienceSlide?.(0)" aria-label="Show certificate slide"></button>
+                        <button class="experience-dot" type="button" onclick="window.showExperienceSlide?.(1)" aria-label="Show project slide"></button>
+                    </div>
+
                 </div>
 
             </div>
@@ -533,6 +680,29 @@
                 <img
                 src="img/certificate.jpg"
                 alt="Hackathon certificate full view">
+
+            </div>
+
+        </div>
+
+        <div
+        class="image-modal innovation-modal"
+        aria-hidden="true">
+
+            <button
+            class="image-modal-close"
+            type="button"
+            aria-label="Close HeartBridge achievement">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+            <div class="image-modal-content innovation-modal-content">
+
+                <img
+                src="img/heartbridge-innovation.png"
+                alt="HeartBridge achievement full view">
 
             </div>
 
@@ -1040,7 +1210,48 @@
 
     <!-- imp js -->
 
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=20260918-heartbridge-warm"></script>
+
+    <script>
+        (() => {
+            const carousel = document.querySelector(".experience-carousel");
+
+            if (!carousel) {
+                return;
+            }
+
+            const track = carousel.querySelector(".experience-track");
+            const slides = [...carousel.querySelectorAll(".experience-slide")];
+            const dots = [...carousel.querySelectorAll(".experience-dot")];
+            let activeSlide = 0;
+
+            window.showExperienceSlide = (index) => {
+                if (!track || slides.length === 0) {
+                    return;
+                }
+
+                activeSlide = (index + slides.length) % slides.length;
+                track.style.transform = `translateX(-${activeSlide * 100}%)`;
+
+                slides.forEach((slide, slideIndex) => {
+                    slide.classList.toggle("is-active", slideIndex === activeSlide);
+                });
+
+                dots.forEach((dot, dotIndex) => {
+                    dot.classList.toggle("is-active", dotIndex === activeSlide);
+                });
+
+                carousel.classList.toggle(
+                    "is-heartbridge",
+                    slides[activeSlide]?.classList.contains("heartbridge-slide")
+                );
+            };
+
+            window.changeExperienceSlide = (step) => {
+                window.showExperienceSlide(activeSlide + step);
+            };
+        })();
+    </script>
 
     <script src="js/darkmode.js"></script>
 

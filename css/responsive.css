@@ -267,7 +267,7 @@ main {
 
 .about-summary,
 .experience-content {
-    grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     min-width: 0;
 }
 
@@ -291,9 +291,15 @@ main {
 .team-photo-frame {
     width: 100%;
     min-width: 0;
+    min-height: 360px;
     border-radius: 20px;
     background: var(--surface-strong);
     border: 1px solid var(--line);
+}
+
+.certificate-panel,
+.experience-info {
+    min-height: 390px;
 }
 
 .team-showcase {

@@ -68,6 +68,12 @@ const translations = {
         "experience.locationLabel": "Location",
         "experience.locationValue": "Ho Chi Minh City",
         "experience.teamLabel": "Team",
+        "experience.innovationFallback": "Innovation Achievement",
+        "experience.innovationName": "Top 50 - Iki Core-Creation (Iki Living OS)",
+        "experience.innovationDescription": "Reached Top 50 Project in an Innovation event with more than 1000 participants, presenting HeartBridge as a practical product idea.",
+        "experience.innovationEventValue": "Innovation",
+        "experience.rankLabel": "Achievement",
+        "experience.rankValue": "Top 50 Project",
         "team.title": "My Team",
         "team.nameLabel": "Team Name",
         "team.nameDescription": "A 5-member team working together through 34 continuous hours.",
@@ -112,7 +118,7 @@ const translations = {
         "nav.experience": "Kinh nghiệm",
         "nav.skills": "Kỹ năng",
         "nav.projects": "Dự án & Liên hệ",
-        "hero.title": "Xin chào, mình là Quang Cường",
+        "hero.title": "Xin chào,tên mình là Quang Cường",
         "hero.subtitle": "Kỹ thuật phần mềm",
         "hero.description": "Mình thích xây dựng hệ thống có khả năng mở rộng, API rõ ràng và ứng dụng web hiện đại với trải nghiệm ổn định.",
         "hero.badgeStudent": "Sinh viên Công nghệ thông tin",
@@ -141,6 +147,12 @@ const translations = {
         "experience.locationLabel": "Địa điểm",
         "experience.locationValue": "Thành phố Hồ Chí Minh",
         "experience.teamLabel": "Đội",
+        "experience.innovationFallback": "Thành tích Innovation",
+        "experience.innovationName": "Top 50 - Iki Core-Creation (Iki Living OS)",
+        "experience.innovationDescription": "Đạt Top 50 Project trong sự kiện Innovation với hơn 1000 người tham gia, giới thiệu HeartBridge như một ý tưởng sản phẩm thực tiễn.",
+        "experience.innovationEventValue": "Innovation",
+        "experience.rankLabel": "Thành tích",
+        "experience.rankValue": "Top 50 Project",
         "team.title": "Đội của mình",
         "team.nameLabel": "Tên đội",
         "team.nameDescription": "Một đội gồm 5 thành viên cùng làm việc trong 34 giờ liên tục.",
@@ -319,8 +331,103 @@ if(contactForm && messageStatus){
 
 }
 
+const experienceCarousel =
+document.querySelector(".experience-carousel");
+
+if(experienceCarousel){
+
+    const track =
+    experienceCarousel.querySelector(".experience-track");
+
+    const slides =
+    [...experienceCarousel.querySelectorAll(".experience-slide")];
+
+    const dots =
+    [...experienceCarousel.querySelectorAll(".experience-dot")];
+
+    const prevButton =
+    experienceCarousel.querySelector(".experience-arrow-prev");
+
+    const nextButton =
+    experienceCarousel.querySelector(".experience-arrow-next");
+
+    let activeExperienceSlide = 0;
+
+    const showExperienceSlide = (index) => {
+
+        if(!track || slides.length === 0){
+
+            return;
+
+        }
+
+        activeExperienceSlide =
+        (index + slides.length) % slides.length;
+
+        track.style.transform =
+        `translateX(-${activeExperienceSlide * 100}%)`;
+
+        slides.forEach((slide,slideIndex)=>{
+
+            slide.classList.toggle(
+                "is-active",
+                slideIndex === activeExperienceSlide
+            );
+
+        });
+
+        dots.forEach((dot,dotIndex)=>{
+
+            dot.classList.toggle(
+                "is-active",
+                dotIndex === activeExperienceSlide
+            );
+
+        });
+
+        experienceCarousel.classList.toggle(
+            "is-heartbridge",
+            slides[activeExperienceSlide]?.classList.contains("heartbridge-slide")
+        );
+
+    };
+
+    window.showExperienceSlide =
+    showExperienceSlide;
+
+    window.changeExperienceSlide = (step) => {
+
+        showExperienceSlide(activeExperienceSlide + step);
+
+    };
+
+    prevButton?.addEventListener("click",()=>{
+
+        showExperienceSlide(activeExperienceSlide - 1);
+
+    });
+
+    nextButton?.addEventListener("click",()=>{
+
+        showExperienceSlide(activeExperienceSlide + 1);
+
+    });
+
+    dots.forEach((dot,dotIndex)=>{
+
+        dot.addEventListener("click",()=>{
+
+            showExperienceSlide(dotIndex);
+
+        });
+
+    });
+
+}
+
 const modalPairs = [
     [".certificate-frame",".certificate-modal"],
+    [".innovation-slide-frame",".innovation-modal"],
     [".team-photo-frame",".team-modal"],
     [".contact-trigger",".contact-modal"]
 ];
